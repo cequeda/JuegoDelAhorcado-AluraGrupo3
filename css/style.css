@@ -629,6 +629,9 @@ footer p {
     font-size: 2em;
     padding: 10px 0px 0px 30px;
     }
+    footer {
+    font-size: 10px;
+}
     /************/
     .botones {
     height: 88%;
