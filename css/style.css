@@ -625,20 +625,27 @@ footer p {
 
 /*----------------------media---------------*/
 @media screen and (max-width:480px) {
+    header img {
+    float: left;
+    padding: 5px 0 0 20px;
+}
     header h1 {
-    font-size: 2em;
-    padding: 10px 0px 0px 30px;
+    font-size: 1.8em;
+    padding: 20px 0px 0px 30px;
     }
     footer {
     font-size: 10px;
 }
     /************/
+    .menu {
+    height: 100vh;
+}
     .botones {
-    height: 88%;
+    height: 80%;
     }
     #bt1 {
-    width: 360px;
-    height: 130px;
+    width: 90%;
+    height: 3em;
     
     background-color: #4b7cb9;
     box-shadow: inset -3px -8px #1052a3;
@@ -649,8 +656,8 @@ footer p {
     color: #E5E5E5;
 }
     #bt2 {
-    width: 320px;
-    height: 80px;
+    width: 90%;
+    height: 3em;
 
     background-color: #4b7cb9;
     box-shadow: inset -3px -8px #1052a3;
