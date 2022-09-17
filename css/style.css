@@ -1,0 +1,966 @@
+html, body{
+    height: 100vh;
+}
+
+/* ------------ header ----------------------*/
+header {
+    width: 100%;
+    background: #e9e8ed;
+    height: 60px;
+}
+header img {
+    float: left;
+    padding: 5px 0 0 40px;
+}
+header h1 {
+    float: left;
+    color: #3e29b4;
+    font-size: 3em;
+    font-style: bold;
+    padding: 5px 0 0 30px;
+}
+
+/*---------footer------------------------*/
+footer {
+    width: 100%;
+/*    background: #1c1cff;*/
+    background: linear-gradient(180deg, #2020de, #0c046c);
+    height: 50px;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+}
+footer p {
+    margin-top: 20px;
+}
+
+/*---------  Menú ------------------------*/
+.menu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*background: #E5E5E5;*/
+    background: linear-gradient(360deg, blue, white);
+    margin: none;
+}
+.botones {
+    width: 100%;
+    height: 84%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#bt1 {
+    width: 317px;
+    height: 114px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #39c;
+    background: #0A3871;
+    align-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    color: #E5E5E5;
+}
+#bt2 {
+    width: 280px;
+    height: 67px;
+    border-radius: 24px;
+    border: 1px solid #39c;
+    align-content: center;
+
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    color: #E5E5E5;
+}
+#bt1:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+}
+#bt2:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;  
+}
+
+/*---------  Juego ------------------------*/
+.juego {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+/*    background: #E5E5E5;*/
+    background: linear-gradient(360deg, blue, white);
+}
+.area-canvas{
+    height: 55vh;
+    padding: 3px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.clase-canvas {
+    width: 50%;
+    height: 100%;
+    border: none;
+}
+
+/***** Mensages ganastes o perdistes ******/
+.ganastes{
+    backdrop-filter: blur(2px);
+    width: 100%;
+    display: none;
+    height: 100vh;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-size: 2em;
+    color: green;
+    
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.mensGana{
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #81e5b3;
+    box-shadow: inset -3px -8px #569d79;
+    border: 4px solid #FAFDF9;
+    border-radius: 30px;
+}
+#cerrarganastes{
+   width: auto;
+    height: 1.3em;
+    margin-top: -10px;
+    border-radius: 10px;
+    border: 1px solid #39c;
+    align-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1em;
+    color: #E5E5E5; 
+}
+#cerrarganastes:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+}
+.finJuego{
+    backdrop-filter: blur(2px);
+    width: 100%;
+    display: none;
+    height: 100vh;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-size: 2em;
+    color: #f82222;
+    
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.mensPerd{
+    width: auto;
+    height: auto;
+    padding: 6px;
+    background-color: #e581a7;
+    box-shadow: inset -3px -8px #9d5666;
+    border: 4px solid #FAFDF9;
+    border-radius: 30px;
+}
+#cerrarfinJuego{
+   width: auto;
+    height: 1.3em;
+    margin-top: -10px;
+    border-radius: 10px;
+    border: 1px solid #39c;
+    align-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1em;
+    color: #E5E5E5; 
+}
+#cerrarfinJuego:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+}
+.mensage{
+    display: none;
+}
+/***************************************/ 
+
+.clase_guiones{
+    height: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    font-family: 'Anton', sans-serif;
+    font-size: 35px;
+}
+.p_guiones {
+    width: 50%;
+    margin: 8px;
+    padding: 15px;
+    box-shadow: 10px 5px 5px black;
+}
+
+.fallos{
+    height: 1.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+}
+.fallos  #p-fallos{
+    background: #b94e4e;
+    margin: 6px;
+    box-shadow: 10px 5px 5px red;
+}
+
+.letras{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/* ------      teclado en pantalla   --*/
+.boton-teclado {
+    display: none; /*  cambio para cel o table */
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    margin: 1px;
+    width: 1.5em;
+}
+.boton-teclado:hover {
+    background: #8bcced
+}
+.disabled {
+  cursor: not-allowed;
+  background-color: var(--secondary-color);
+}
+.bueno {
+    background: rgba(32, 217, 40, 0.62)
+}
+.malo {
+    background: rgba(217, 46, 32, 0.62)
+}
+/* ------------------------------------*/
+
+.menuJuego{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bt3 {
+    width: 140px;
+    height: 2.3em;
+    margin: 5px;
+    border-radius: 24px;
+    border: 1px solid #39c;
+    align-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1.4em;
+    color: #E5E5E5;
+}
+#bt4 {
+    width: 140px;
+    height: 2.3em;
+    margin: 5px;
+    border-radius: 24px;
+    border: 1px solid #39c;
+    align-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1.4em;
+    color: #E5E5E5;
+}
+#bt3:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+}
+#bt4:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;  
+}
+
+/*---------  Guardas Palabras ------------------------*/
+.guardaPalabras{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+/*    background: #E5E5E5;*/
+    background: linear-gradient(360deg, blue, white);
+}
+.DivGuardado{
+    height: 82vh;
+    padding: 3px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.area_texto{
+    width: 50%;
+    height: 40%;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 30px 30px 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    position: static;
+    background-image: url("../img/muneco2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.texto{
+    width: 100%;
+    height: 100%;
+    font-weight: 400px;
+    background: none;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.botones_guardado{
+    width: 100%;
+}
+#emp_Gua{
+    width: 165px;
+    height: 2.3em;
+    margin: 5px;
+    border-radius: 24px;
+    border: 1px solid #39c;
+    align-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1.4em;
+    color: #E5E5E5;
+}
+#cancelar{
+    width: 165px;
+    height: 2.3em;
+    margin: 5px;
+    border-radius: 24px;
+    border: 1px solid #39c;
+    align-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1.4em;
+    color: #E5E5E5;
+}
+#emp_Gua:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+}
+#cancelar:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;  
+}
+
+/***** Mensages palabra guardada o no guardada ******/
+.palabraGuardada{
+    backdrop-filter: blur(2px);
+    width: 100%;
+    display: none;
+    height: 100vh;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-size: 2em;
+    color: green;
+    
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.mensPalabraGuardada{
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #625cff;
+    box-shadow: inset -3px -8px #413aff;
+    border: 4px solid #FAFDF9;
+    border-radius: 30px;
+}
+#cerrarGuardada{
+   width: auto;
+    height: 1.3em;
+    border-radius: 10px;
+    border: 1px solid #39c;
+    align-content: center;
+    justify-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1em;
+    color: #E5E5E5; 
+}
+#cerrarGuardada:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+}
+.palabraNoGuardada{
+    backdrop-filter: blur(2px);
+    width: 100%;
+    display: none;
+    height: 100vh;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-size: 2em;
+    color: #f82222;
+    
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.menspalabraNoGuardada{
+    width: auto;
+    height: auto;
+    padding: 6px;
+    background-color: #625cff;
+    box-shadow: inset -3px -8px #413aff;
+    border: 4px solid #FAFDF9;
+    border-radius: 30px;
+}
+#cerrarNoGuardada{
+    width: auto;
+    height: 1.3em;
+    border-radius: 10px;
+    border: 1px solid #39c;
+    align-content: center;
+    justify-content: center;
+    
+    background-color: #9fa7ac;
+    box-shadow: inset -3px -8px #808486;
+    border: 4px solid #beb7ce;
+    border-radius: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1em;
+    color: #E5E5E5; 
+}
+#cerrarNoGuardada:hover {
+    color: black;
+    transform: scale(1.01);
+    transition: all .2s ease-in-out;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+}
+
+/************/
+.mesageerror{
+    backdrop-filter: blur(2px);
+    width: 100%;
+    display: none;
+    height: 100vh;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-size: 2em;
+    color: #ff9393;
+    
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.mensmesageerror{
+    width: auto;
+    height: auto;
+    padding: 16px;
+    background-color: #3029f5;
+    box-shadow: inset -3px -8px #1914ba;
+    border: 4px solid #FAFDF9;
+    border-radius: 30px;
+}
+.contenedorAmbos{
+    background-color: rgba(23, 0, 248, 0.38);
+    padding: 5px;
+    border: 4px solid #5d65a3;
+    border-radius: 30px;
+    
+}
+
+
+/*----------------------media---------------*/
+@media screen and (max-width:480px) {
+    .headerImg {
+    padding: 10px 0 0 20px;
+}
+    header h1 {
+    font-size: 1.8em;
+    padding: 20px 0px 0px 30px;
+    }
+    footer {
+    font-size: 10px;
+}
+    /************/
+    .menu {
+    height: 100vh;
+}
+    .botones {
+    height: 85%;
+    }
+    #bt1 {
+    width: 85%;
+    height: 4em;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+
+    font-size: 20px;
+    color: #E5E5E5;
+}
+    #bt2 {
+    width: 80%;
+    height: 4em;
+
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px; 
+    
+    font-size: 20px;
+    color: #E5E5E5;
+}
+    /************/
+    .juego {
+    height: 100vh;
+    }
+
+     .area-canvas{
+        width: 98%;
+        height: 40vh;
+}
+    .clase-canvas {
+        width: 80%;
+        height: 80%;
+    }
+    /*****************************/
+    .clase_guiones{
+    font-size: 1em;
+}
+    .fallos{
+
+        height: 2em;
+        font-size: 20px;
+    }
+    .fallos  #p-fallos{
+    background: #b94e4e;
+    margin: 6px;
+    box-shadow: 10px 5px 5px red;
+}
+    /******************************/
+    .boton-teclado {
+    display: inline-flex; /*  cambio para cel o table */
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    margin: 1px;
+    width: 1.5em;
+    }
+    .boton-teclado:hover {
+    background: #8bcced
+    }
+    .disabled {
+    cursor: not-allowed;
+    background-color: var(--secondary-color);
+    }
+    .bueno {
+    background: rgba(32, 217, 40, 0.62)
+    }
+    .malo {
+    background: rgba(217, 46, 32, 0.62)
+} 
+    
+    .menuJuego{
+    margin: 10px;
+}
+    #bt3 {
+        width: 180px;
+
+        background-color: #4b7cb9;
+        box-shadow: inset -3px -8px #1052a3;
+        border: 4px solid #8b8598;
+        border-radius: 30px;
+
+
+        font-size: 1em;
+        color: #E5E5E5;
+    }
+    #bt4 {
+    width: 180px;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px; 
+
+    font-size: 1em;
+    color: #E5E5E5;
+}
+    
+    .ganastes{
+    font-size: 2em;
+}
+    .finJuego{
+    font-size: 2em;
+}
+    /*******************/
+    .DivGuardado{
+    height: 90vh;
+}
+    .area_texto{
+        width: 70%;
+        height: 40%;
+    }
+    .texto{
+    width: 100%;
+    height: 100%;
+}
+    
+    .menIdicaciones{
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    
+    .botones_guardado{
+        width: 100%;
+        margin-top: 10px;
+}
+    #emp_Gua{
+        width: 130px;
+
+        background-color: #4b7cb9;
+        box-shadow: inset -3px -8px #1052a3;
+        border: 4px solid #8b8598;
+        border-radius: 30px;
+
+        font-size: 1.1em;
+        color: #E5E5E5;
+    }
+    #cancelar{
+    width: 130px;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+
+    font-size: 1.1em;
+    color: #E5E5E5;
+}
+    
+    .palabraGuardada{
+    font-size: 1.8em;
+}
+    .palabraNoGuardada{
+    font-size: 1.8em;
+}
+    .mesageerror{
+    font-size: 1.8em;
+}
+    /************/
+}
+
+@media screen and (min-width:480px) and (max-width:860px) {
+header h1 {
+    font-size: 3.5em;
+    padding: 5px 0px 0px 30px;
+    }
+  /************/
+    .botones {
+    height: 89%;
+    }
+    #bt1 {
+    width: 360px;
+    height: 130px;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+
+    font-size: 30px;
+    color: #E5E5E5;
+}
+    #bt2 {
+    width: 320px;
+    height: 80px;
+
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px; 
+    
+    font-size: 30px;
+    color: #E5E5E5;
+}
+    /************/
+    .area-canvas{
+        width: 99%;
+    height: 53vh;
+}
+    .clase-canvas {
+        width: 70%;
+        height: 70%;
+    }
+    /************/
+    .boton-teclado {
+    display: inline-flex; /*  cambio para cel o table */
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    outline: none;
+    border: none;
+    margin: 3px;
+    width: 1.5em;
+    }
+    .boton-teclado:hover {
+    background: #8bcced
+    }
+    .disabled {
+    cursor: not-allowed;
+    background-color: var(--secondary-color);
+    }
+    .bueno {
+    background: rgba(32, 217, 40, 0.62)
+    }
+    .malo {
+    background: rgba(217, 46, 32, 0.62)
+} 
+    
+    .menuJuego{
+    margin: 10px;
+}
+    #bt3 {
+        width: 200px;
+
+        background-color: #4b7cb9;
+        box-shadow: inset -3px -8px #1052a3;
+        border: 4px solid #8b8598;
+        border-radius: 30px;
+
+
+        font-size: 1.6em;
+        color: #E5E5E5;
+    }
+    #bt4 {
+    width: 200px;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px; 
+
+    font-size: 1.6em;
+    color: #E5E5E5;
+}
+    
+    .ganastes{
+    font-size: 3em;
+}
+    .finJuego{
+    font-size: 3em;
+}
+    /************/
+    .DivGuardado{
+        width: 99%;
+    height: 89vh;
+}
+    .area_texto{
+        width: 80%;
+        height: 40%;
+    }
+    .texto{
+    width: 100%;
+    height: 100%;
+}
+    
+    .menIdicaciones{
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    
+    .botones_guardado{
+    width: 100%;
+        margin-top: 20px;
+}
+    #emp_Gua{
+        width: 230px;
+
+        background-color: #4b7cb9;
+        box-shadow: inset -3px -8px #1052a3;
+        border: 4px solid #8b8598;
+        border-radius: 30px;
+
+        font-size: 1.8em;
+        color: #E5E5E5;
+    }
+    #cancelar{
+    width: 230px;
+    
+    background-color: #4b7cb9;
+    box-shadow: inset -3px -8px #1052a3;
+    border: 4px solid #8b8598;
+    border-radius: 30px;
+
+    font-size: 1.8em;
+    color: #E5E5E5;
+}
+    
+    .palabraGuardada{
+    font-size: 3em;
+}
+    .palabraNoGuardada{
+    font-size: 3em;
+}
+    .mesageerror{
+    font-size: 3em;
+}
+    /************/
+
+}
